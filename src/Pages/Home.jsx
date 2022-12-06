@@ -30,32 +30,102 @@ const Home = () => {
     }
 
     return (
-        <div className="overflow-x-auto">
-            <table className="table table-zebra w-1/2 mx-auto mt-10">
-                <thead>
-                    <tr>
-                        <th onClick={() => sorting("name")}>Name <BiSortAlt2 className='inline-block' /></th>
-                        <th onClick={() => sorting("city")}>City <BiSortAlt2 className='inline-block' /></th>
-                        <th onClick={() => sorting("email")}>Email Address <BiSortAlt2 className='inline-block' /></th>
-                        <th onClick={() => sorting("joiningDate")}>Joining Date <BiSortAlt2 className='inline-block' /></th>
-                        <th onClick={() => sorting("role")}>Role <BiSortAlt2 className='inline-block' /></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        tableData.map((singleTableData, idx) => <tr key={idx}>
-                            <td className='flex'>
-                                <img className='pr-2' src={singleTableData.avatar} alt="" />
-                                <span>{singleTableData.name}</span>
-                            </td>
-                            <td>{singleTableData.city}</td>
-                            <td>{singleTableData.email}</td>
-                            <td>{singleTableData.joiningDate}</td>
-                            <td>{singleTableData.role}</td>
-                        </tr>)
-                    }
-                </tbody>
-            </table>
+        <div>
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-1/2 mx-auto mt-10">
+                    <thead>
+                        <tr className='border'>
+                            <th onClick={() => sorting("name")}>Name <BiSortAlt2 className='inline-block' /></th>
+                            <th onClick={() => sorting("city")}>City <BiSortAlt2 className='inline-block' /></th>
+                            <th onClick={() => sorting("email")}>Email Address <BiSortAlt2 className='inline-block' /></th>
+                            <th onClick={() => sorting("joiningDate")}>Joining Date <BiSortAlt2 className='inline-block' /></th>
+                            <th onClick={() => sorting("role")}>Role <BiSortAlt2 className='inline-block' /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            tableData.map((singleTableData, idx) => <tr key={idx} className='border'>
+                                <td className='flex'>
+                                    <img className='pr-2' src={singleTableData.avatar} alt="" />
+                                    <span>{singleTableData.name}</span>
+                                </td>
+                                <td>{singleTableData.city}</td>
+                                <td><a href="#" className='text-blue-600 underline'>{singleTableData.email}</a></td>
+                                <td>{singleTableData.joiningDate}</td>
+                                <td>{singleTableData.role}</td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div className="overflow-x-auto ">
+                <table className="table table-zebra w-1/2 mx-auto mt-10 ">
+                    <thead>
+                        <tr className='border'>
+                            <th onClick={() => sorting("name")}>Name <BiSortAlt2 className='inline-block' /></th>
+                            <th>Email Address</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            tableData.map((singleTableData, idx) => <tr key={idx} className='border'>
+                                <td className='flex'>
+                                    <img className='pr-2' src={singleTableData.avatar} alt="" />
+                                    <span>{singleTableData.name}</span>
+                                </td>
+                                <td><a href="#" className='text-blue-600 underline'>{singleTableData.email}</a></td>
+                                <td>{singleTableData.role}</td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-1/2 mx-auto mt-10">
+                    <thead>
+                        <tr className='border'>
+                            <th>Email Address</th>
+                            <th onClick={() => sorting("joiningDate")}>Joining Date <BiSortAlt2 className='inline-block' /></th>
+                            <th onClick={() => sorting("role")}>Role <BiSortAlt2 className='inline-block' /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            tableData.map((singleTableData, idx) => <tr key={idx} className='border'>
+                                <td>{singleTableData.email}</td>
+                                <td>{singleTableData.joiningDate}</td>
+                                <td>{singleTableData.role}</td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-1/2 mx-auto mt-10">
+                    <thead>
+                        <tr className='border'>
+                            <th>Name</th>
+                            <th onClick={() => sorting("city")}>City <BiSortAlt2 className='inline-block' /></th>
+                            <th>Joining Date</th>
+                            <th onClick={() => sorting("role")}>Role <BiSortAlt2 className='inline-block' /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            tableData.map((singleTableData, idx) => <tr key={idx} className='border'>
+                                <td className='flex'>
+                                    <img className='pr-2' src={singleTableData.avatar} alt="" />
+                                    <span>{singleTableData.name}</span>
+                                </td>
+                                <td>{singleTableData.city}</td>
+                                <td>{singleTableData.joiningDate}</td>
+                                <td>{singleTableData.role}</td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
